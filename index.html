@@ -26,33 +26,36 @@
       // Take two parameters (playerSelection, computerSelection) and return a string to declare the winner by comparing the results:
       // playerSelection is case sensitive
       function playRound(playerSelection, computerSelection) {
-        let roundWinner;
+        let roundResult;
         if (playerSelection === computerSelection) {
-          roundWinner = 'tie';
+          roundResult = 'tie';
         } else if (playerSelection === 'rock') {
             if (computerSelection === 'paper') {
-              roundWinner = 'computer';
+              roundResult = 'computer';
             } else {
-              roundWinner = 'player';
+              roundResult = 'player';
             }
         } else if (playerSelection === 'paper') {
             if (computerSelection === 'rock') {
-              roundWinner = 'player';
+              roundResult = 'player';
             } else {
-              roundWinner = 'computer';
+              roundResult = 'computer';
             }
         } else {
             if (computerSelection === 'rock') {
-              roundWinner = 'computer';
+              roundResult = 'computer';
             } else {
-              roundWinner = 'player';
+              roundResult = 'player';
             }
         }
-        return roundWinner
+        return roundResult
       };
 
       const scoreKeeper = () => {
-        playRound(playerLower,computerSelection)
+        roundWinner = playRound(playerLower,computerSelection)
+        if (roundWinner === 'tie') {
+          console.log('It\'s a tie!');
+        }
       }
 
       // Function to play 5 rounds of the game
@@ -65,15 +68,17 @@
       // Report winner or loser after the last iteration of the loop
       const game = () => {
         for (let round = 0; round < 5; round++) {
-          playRound()
+          scoreKeeper()
         }
       };
 
-
+      
       const playerSelection = 'PAPER';
       let playerLower = playerSelection.toLowerCase();
       const computerSelection = getComputerChoice();
-  
+      let playerScore = 0;
+      let computerScore = 0;
+      scoreKeeper();
 
     </script>
 </body>
