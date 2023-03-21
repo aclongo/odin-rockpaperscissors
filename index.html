@@ -23,6 +23,7 @@
       };
 
       // Function to retrieve input from the player, validate the choice, and send it back to the game
+      // player choice is case-insensitive
       function getPlayerChoice() {
         input = prompt('Make your choice: rock, paper or scissors?')
         let playerChoice = input.toLowerCase();
@@ -30,8 +31,7 @@
       };
 
       // Function to determine winner for single round
-      // Take two parameters (playerSelection, computerSelection) and return a string to declare the winner by comparing the results:
-      // playerSelection is case sensitive
+      // Take two parameters (playerSelection, computerSelection), compare choices, determine and return a winner:
       function playRound(playerSelection, computerSelection) {
         let roundResult;
         if (playerSelection === computerSelection) {
@@ -60,9 +60,9 @@
       };
 
       // Function to play 5 rounds of the game by looping 5 times
-      // Each loop resets computer choice and calls for a new player choice
+      // Each loop calls for a new computer and player choice
       // Scores increment based on the results of playRound and a message is logged
-      // Track current player and computer score
+      // Track and log current scores
       // Report winner or loser after the last iteration of the loop
       function game() {
         for (let round = 1; round < 6; round++) {
