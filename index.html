@@ -26,28 +26,34 @@
       // Take two parameters (playerSelection, computerSelection) and return a string to declare the winner by comparing the results:
       // playerSelection is case sensitive
       function playRound(playerSelection, computerSelection) {
+        let roundWinner;
         if (playerSelection === computerSelection) {
-          return 'tie'
+          roundWinner = 'tie';
         } else if (playerSelection === 'rock') {
             if (computerSelection === 'paper') {
-              return 'computer'
+              roundWinner = 'computer';
             } else {
-              return 'player'
+              roundWinner = 'player';
             }
         } else if (playerSelection === 'paper') {
             if (computerSelection === 'rock') {
-              return 'player'
+              roundWinner = 'player';
             } else {
-              return 'computer'
+              roundWinner = 'computer';
             }
         } else {
             if (computerSelection === 'rock') {
-              return 'computer'
+              roundWinner = 'computer';
             } else {
-              return 'player'
+              roundWinner = 'player';
             }
         }
+        return roundWinner
       };
+
+      const scoreKeeper = () => {
+        playRound(playerLower,computerSelection)
+      }
 
       // Function to play 5 rounds of the game
       // For loop to iterate 5 times
@@ -67,7 +73,7 @@
       const playerSelection = 'PAPER';
       let playerLower = playerSelection.toLowerCase();
       const computerSelection = getComputerChoice();
-      console.log(playRound(playerLower,computerSelection));
+  
 
     </script>
 </body>
