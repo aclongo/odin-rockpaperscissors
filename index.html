@@ -13,7 +13,6 @@
       // Each number is mapped to a choice
       function getComputerChoice() {
         randNum = Math.floor(Math.random() * 3);
-        console.log(randNum);
         if (randNum === 0){
           return 'rock'
         } else if (randNum === 1){
@@ -26,7 +25,7 @@
       // Function to determine winner for single round
       // Take two parameters (playerSelection, computerSelection) and return a string to declare the winner by comparing the results:
       // playerSelection is case sensitive
-      function playRound(player, computer) {
+      function playRound(playerSelection, computerSelection) {
         if (playerSelection === computerSelection) {
           return 'It\'s a tie!'
         } else if (playerSelection === 'rock') {
@@ -50,11 +49,10 @@
         }
       };
 
-      const playerSelection = 'rock';
+      const playerSelection = 'PAPER';
+      let playerLower = playerSelection.toLowerCase();
       const computerSelection = getComputerChoice();
-      console.log(playerSelection);
-      console.log(computerSelection);
-      console.log(playRound(playerSelection,computerSelection));
+      console.log(playRound(playerLower,computerSelection));
 
     </script>
 </body>
