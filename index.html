@@ -27,24 +27,24 @@
       // playerSelection is case sensitive
       function playRound(playerSelection, computerSelection) {
         if (playerSelection === computerSelection) {
-          return 'It\'s a tie!'
+          return 'tie'
         } else if (playerSelection === 'rock') {
             if (computerSelection === 'paper') {
-              return 'Paper beats rock - the computer won!'
+              return 'computer'
             } else {
-              return 'Rock beats scissors - you beat the computer!'
+              return 'player'
             }
         } else if (playerSelection === 'paper') {
             if (computerSelection === 'rock') {
-              return 'Paper beats rock - you beat the computer!'
+              return 'player'
             } else {
-              return 'Scissors beat paper - the computer won!'
+              return 'computer'
             }
         } else {
             if (computerSelection === 'rock') {
-              return 'Rock beats scissors - the computer won!'
+              return 'computer'
             } else {
-              return 'Scissors beats paper - you beat the computer!'
+              return 'player'
             }
         }
       };
