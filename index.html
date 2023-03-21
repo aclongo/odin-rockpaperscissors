@@ -51,10 +51,10 @@
         return roundResult
       };
 
-      // Function to play 5 rounds of the game
-      // For loop to iterate 5 times
-      // Call the playRound function
-      // Track player and computer score
+      // Function to play 5 rounds of the game by looping 5 times
+      // Each loop resets computer choice and calls for a new player choice
+      // Scores increment based on the results of playRound and a message is logged
+      // Track current player and computer score
       // Report winner or loser after the last iteration of the loop
       function game() {
         for (let round = 0; round < 5; round++) {
@@ -63,16 +63,24 @@
           let playerLower = playerSelection.toLowerCase();
           let roundWinner = playRound(playerLower, computerSelection);
           if (roundWinner === 'tie') {
-            console.log('It\'s a tie!');
+            console.log('This round is a tie!');
           } else if (roundWinner === 'player') {
-            console.log('You beat the computer!');
+            console.log('You beat the computer this round!');
             playerScore++;
           } else {
-          console.log('The computer beat you!');
-          computerScore++;
+            console.log('The computer beat you this round!');
+            computerScore++;
         }
         console.log('Player score: ' + playerScore);
         console.log('Computer score: ' + computerScore);
+        }
+        console.log(`FINAL SCORES: Player ${playerScore}, Computer ${computerScore}`);
+        if (playerScore === computerScore) {
+          console.log('The game resulted in a tie!');
+        } else if (playerScore > computerScore) {
+          console.log('Hooray - You win the game!');
+        } else {
+          console.log('Too bad - The computer won the game!');
         }
       };
 
