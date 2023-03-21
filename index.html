@@ -65,17 +65,17 @@
       // Track current player and computer score
       // Report winner or loser after the last iteration of the loop
       function game() {
-        for (let round = 0; round < 5; round++) {
+        for (let round = 1; round < 6; round++) {
           const playerSelection = getPlayerChoice();
           const computerSelection = getComputerChoice();
           let roundWinner = playRound(playerSelection, computerSelection);
           if (roundWinner === 'tie') {
-            console.log('This round is a tie!');
+            console.log(`ROUND ${round}/5: This round is a tie!`);
           } else if (roundWinner === 'player') {
-            console.log('You beat the computer this round!');
+            console.log(`ROUND ${round}/5: You beat the computer this round!`);
             playerScore++;
           } else {
-            console.log('The computer beat you this round!');
+            console.log(`ROUND ${round}/5: The computer beat you this round!`);
             computerScore++;
         }
         console.log('Player score: ' + playerScore);
@@ -91,6 +91,7 @@
         }
       };
 
+      console.log('ROCK PAPER SCISSORS GAME - by aclongo for the Odin Project')
       let playerScore = 0;
       let computerScore = 0;
       game();
