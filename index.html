@@ -56,6 +56,14 @@
         if (roundWinner === 'tie') {
           console.log('It\'s a tie!');
         }
+        else if (roundWinner === 'player') {
+          console.log('You beat the computer!');
+          playerScore++;
+        }
+        else {
+          console.log('The computer beat you!');
+          computerScore++;
+        }
       }
 
       // Function to play 5 rounds of the game
