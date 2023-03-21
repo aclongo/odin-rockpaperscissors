@@ -8,21 +8,34 @@
 </head>
 <body>
     <script>
-        // A random number between 0 and 1 is generated, multiplied by 3 to become 0-2, and rounded down to a whole number
-        // The result returns the computer choice
-        const getComputerChoice = () => {
-          randNum = Math.floor(Math.random() * 3);
-          console.log(randNum);
-          if (randNum === 0){
-            return 'Rock'
-          } else if (randNum === 1){
-            return 'Paper'
-          } else {
-            return 'Scissors'
-          }
-        };
+      // Function to return computer choice
+      // A random number between 0 and 1 is generated, multiplied by 3 to become 0-2, and rounded down to a whole number
+      // Each number is mapped to a choice
+      const getComputerChoice = () => {
+        randNum = Math.floor(Math.random() * 3);
+        console.log(randNum);
+        if (randNum === 0){
+          return 'Rock'
+        } else if (randNum === 1){
+          return 'Paper'
+        } else {
+          return 'Scissors'
+        }
+      };
 
-        console.log(getComputerChoice());
+      // Function to play a single round of the game
+      // Take two parameters (playerSelection, computerSelection) and return a string to declare the winner by comparing the results:
+        // if player and computer chose the same, tie  
+        // if player chose rock, and computer chose paper, computer wins
+          // else if computer chose scissors, player wins
+        // else if player chose paper, and computer chose rock, player wins
+          // else if computer chose scissors, computer wins
+        // else if player chose scissors, and computer chose rock, computer wins
+          // else if computer chose paper, player wins
+      // playerSelection is case sensitive
+      
+
+
     </script>
 </body>
 </html>
