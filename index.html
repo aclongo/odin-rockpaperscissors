@@ -49,6 +49,21 @@
         }
       };
 
+      // Function to play 5 rounds of the game
+      // For loop to iterate 5 times
+      // Call the playRound function
+      // Track player and computer score
+        // global variables for player and computer scores
+        // change playGame to return a winner, instead of a string
+        // make a new function that will take the winner, increment the score, then log the winner and current scores
+      // Report winner or loser after the last iteration of the loop
+      const game = () => {
+        for (let round = 0; round < 5; round++) {
+          playRound()
+        }
+      };
+
+
       const playerSelection = 'PAPER';
       let playerLower = playerSelection.toLowerCase();
       const computerSelection = getComputerChoice();
