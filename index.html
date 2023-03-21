@@ -23,7 +23,7 @@
         }
       };
 
-      // Function to play a single round of the game
+      // Function to determine winner for single round
       // Take two parameters (playerSelection, computerSelection) and return a string to declare the winner by comparing the results:
         // if player and computer chose the same, tie  
         // if player chose rock, and computer chose paper, computer wins
@@ -33,8 +33,31 @@
         // else if player chose scissors, and computer chose rock, computer wins
           // else if computer chose paper, player wins
       // playerSelection is case sensitive
-      
+      function playRound(playerSelection, computerSelection) {
+        if (playerSelection === computerSelection) {
+          return 'It\'s a tie!'
+        } else if (playerSelection === 'rock') {
+            if (computerSelection === 'paper') {
+              return 'Paper beats rock - the computer won!'
+            } else {
+              return 'Rock beats scissors - you beat the computer!'
+            }
+        } else if (playerSelection === 'paper') {
+            if (computerSelection === 'rock') {
+              return 'Paper beats rock - you beat the computer!'
+            } else {
+              return 'Scissors beat paper - the computer won!'
+            }
+        } else {
+            if (computerSelection === 'rock') {
+              return 'Rock beats scissors - the computer won!'
+            } else {
+              return 'Scissors beats paper - you beat the computer!'
+            }
+        }
+      };
 
+      
 
     </script>
 </body>
