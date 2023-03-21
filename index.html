@@ -51,42 +51,34 @@
         return roundResult
       };
 
-      const scoreKeeper = () => {
-        roundWinner = playRound(playerLower,computerSelection)
-        if (roundWinner === 'tie') {
-          console.log('It\'s a tie!');
-        }
-        else if (roundWinner === 'player') {
-          console.log('You beat the computer!');
-          playerScore++;
-        }
-        else {
-          console.log('The computer beat you!');
-          computerScore++;
-        }
-      }
-
       // Function to play 5 rounds of the game
       // For loop to iterate 5 times
       // Call the playRound function
       // Track player and computer score
-        // global variables for player and computer scores
-        // change playGame to return a winner, instead of a string
-        // make a new function that will take the winner, increment the score, then log the winner and current scores
       // Report winner or loser after the last iteration of the loop
-      const game = () => {
+      function game() {
         for (let round = 0; round < 5; round++) {
-          scoreKeeper()
+          const playerSelection = 'rock';
+          const computerSelection = getComputerChoice();
+          let playerLower = playerSelection.toLowerCase();
+          let roundWinner = playRound(playerLower, computerSelection);
+          if (roundWinner === 'tie') {
+            console.log('It\'s a tie!');
+          } else if (roundWinner === 'player') {
+            console.log('You beat the computer!');
+            playerScore++;
+          } else {
+          console.log('The computer beat you!');
+          computerScore++;
+        }
+        console.log('Player score: ' + playerScore);
+        console.log('Computer score: ' + computerScore);
         }
       };
 
-      
-      const playerSelection = 'PAPER';
-      let playerLower = playerSelection.toLowerCase();
-      const computerSelection = getComputerChoice();
       let playerScore = 0;
       let computerScore = 0;
-      scoreKeeper();
+      game();
 
     </script>
 </body>
