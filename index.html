@@ -58,7 +58,7 @@
       // Report winner or loser after the last iteration of the loop
       function game() {
         for (let round = 0; round < 5; round++) {
-          const playerSelection = 'rock';
+          const playerSelection = prompt('Make your choice: rock, paper or scissors?');
           const computerSelection = getComputerChoice();
           let playerLower = playerSelection.toLowerCase();
           let roundWinner = playRound(playerLower, computerSelection);
