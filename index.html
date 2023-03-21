@@ -11,29 +11,22 @@
       // Function to return computer choice
       // A random number between 0 and 1 is generated, multiplied by 3 to become 0-2, and rounded down to a whole number
       // Each number is mapped to a choice
-      const getComputerChoice = () => {
+      function getComputerChoice() {
         randNum = Math.floor(Math.random() * 3);
         console.log(randNum);
         if (randNum === 0){
-          return 'Rock'
+          return 'rock'
         } else if (randNum === 1){
-          return 'Paper'
+          return 'paper'
         } else {
-          return 'Scissors'
+          return 'scissors'
         }
       };
 
       // Function to determine winner for single round
       // Take two parameters (playerSelection, computerSelection) and return a string to declare the winner by comparing the results:
-        // if player and computer chose the same, tie  
-        // if player chose rock, and computer chose paper, computer wins
-          // else if computer chose scissors, player wins
-        // else if player chose paper, and computer chose rock, player wins
-          // else if computer chose scissors, computer wins
-        // else if player chose scissors, and computer chose rock, computer wins
-          // else if computer chose paper, player wins
       // playerSelection is case sensitive
-      function playRound(playerSelection, computerSelection) {
+      function playRound(player, computer) {
         if (playerSelection === computerSelection) {
           return 'It\'s a tie!'
         } else if (playerSelection === 'rock') {
@@ -57,7 +50,11 @@
         }
       };
 
-      
+      const playerSelection = 'rock';
+      const computerSelection = getComputerChoice();
+      console.log(playerSelection);
+      console.log(computerSelection);
+      console.log(playRound(playerSelection,computerSelection));
 
     </script>
 </body>
