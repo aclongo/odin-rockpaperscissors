@@ -22,6 +22,13 @@
         }
       };
 
+      // Function to retrieve input from the player, validate the choice, and send it back to the game
+      function getPlayerChoice() {
+        input = prompt('Make your choice: rock, paper or scissors?')
+        let playerChoice = input.toLowerCase();
+        return playerChoice 
+      };
+
       // Function to determine winner for single round
       // Take two parameters (playerSelection, computerSelection) and return a string to declare the winner by comparing the results:
       // playerSelection is case sensitive
@@ -48,6 +55,7 @@
               roundResult = 'player';
             }
         }
+        console.log(`You chose ${playerSelection} and the computer chose ${computerSelection}.`)
         return roundResult
       };
 
@@ -58,10 +66,9 @@
       // Report winner or loser after the last iteration of the loop
       function game() {
         for (let round = 0; round < 5; round++) {
-          const playerSelection = prompt('Make your choice: rock, paper or scissors?');
+          const playerSelection = getPlayerChoice();
           const computerSelection = getComputerChoice();
-          let playerLower = playerSelection.toLowerCase();
-          let roundWinner = playRound(playerLower, computerSelection);
+          let roundWinner = playRound(playerSelection, computerSelection);
           if (roundWinner === 'tie') {
             console.log('This round is a tie!');
           } else if (roundWinner === 'player') {
