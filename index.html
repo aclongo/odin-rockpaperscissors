@@ -25,8 +25,15 @@
       // Function to retrieve input from the player, validate the choice, and send it back to the game
       // player choice is case-insensitive
       function getPlayerChoice() {
-        input = prompt('Make your choice: rock, paper or scissors?')
-        let playerChoice = input.toLowerCase();
+        const choices = ['rock','paper','scissors'];
+        let playerChoice;
+        while (true) {
+          input = prompt('Make your choice: rock, paper or scissors?')
+          let playerChoice = input.toLowerCase();
+          if (choices.includes(playerChoice)) {
+            break;
+          }
+        }
         return playerChoice 
       };
 
