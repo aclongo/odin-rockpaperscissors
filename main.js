@@ -1,6 +1,4 @@
-// Function to return computer choice
-// A random number between 0 and 1 is generated, multiplied by 3 to become 0-2, and rounded down to a whole number
-// Each number is mapped to a choice
+// Determine computer choice by generating a random number
 function getComputerChoice() {
   randNum = Math.floor(Math.random() * 3);
   if (randNum === 0){
@@ -12,8 +10,7 @@ function getComputerChoice() {
   }
 };
 
-// Function to retrieve input from the player, validate the choice, and send it back to the game
-// player choice is case-insensitive
+// Retrieve input from the player (case-insensitive), validate by matching it to an array, and send back to the game
 function getPlayerChoice() {
   const choices = ['rock','paper','scissors'];
   let playerChoice;
@@ -27,8 +24,7 @@ function getPlayerChoice() {
   return playerChoice
 };
 
-// Function to determine winner for single round
-// Take two parameters (playerSelection, computerSelection), compare choices, determine and return a winner:
+// Determine winner for a single round by comparing player and computer choices
 function playRound(playerSelection, computerSelection) {
   let roundResult;
   if (playerSelection === computerSelection) {
@@ -56,11 +52,8 @@ function playRound(playerSelection, computerSelection) {
   return roundResult
 };
 
-// Function to play 5 rounds of the game by looping 5 times
-// Each loop calls for a new computer and player choice
-// Scores increment based on the results of playRound and a message is logged
-// Track and log current scores
-// Report winner or loser after the last iteration of the loop
+// Loop through 5 rounds of gameplay, increment and track scores based on round results
+// Report winner or loser after the last iteration of the loop based on final scores
 function game() {
   for (let round = 1; round < 6; round++) {
     const playerSelection = getPlayerChoice();
