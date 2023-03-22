@@ -29,12 +29,12 @@
         let playerChoice;
         while (true) {
           input = prompt('Make your choice: rock, paper or scissors?')
-          let playerChoice = input.toLowerCase();
+          playerChoice = input.toLowerCase();
           if (choices.includes(playerChoice)) {
             break;
           }
         }
-        return playerChoice 
+        return playerChoice
       };
 
       // Function to determine winner for single round
